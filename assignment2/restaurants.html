@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Browse our curated selection of top-tier restaurants in the Klang Valley, from local street food to premium dining.">
     <title>Restaurants | Klang Valley Dining</title>
-    <!-- One external stylesheet shared by every page -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- One script file shared by every page; "defer" runs it after the HTML is parsed -->
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -19,7 +17,7 @@
             <nav aria-label="Main navigation">
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="restaurants.html" class="active">Restaurants</a></li>
+                    <li><a href="restaurants.html" class="active" aria-current="page">Restaurants</a></li>
                     <li><a href="recommend.html">Recommendations</a></li>
                     <li><a href="register.html">Register</a></li>
                     <li><a href="reservation.html">Reserve</a></li>
@@ -42,8 +40,10 @@
                 <img src="images/piii_eater_location.webp" alt="A view of Piii Eatery cafe interior">
                 <div class="restaurant-card-content">
                     <h2>PIII Eatery</h2>
+                    <p class="description">Located in the bustling heart of Damansara Uptown, PIII Eatery offers a cozy, modern ambiance perfect for casual dates and catch-ups. We specialize in fusion Western pasta and hearty rice bowls, crafted with fresh ingredients and bold flavors to provide a comforting yet exciting dining experience for every guest.</p>
                     <p><strong>Area:</strong> Damansara Uptown</p>
                     <p><strong>Cuisine:</strong> Western pasta & rice bowls</p>
+                    <p><strong>Signature Dishes:</strong> Spaghetti Carbonara (RM 25.00), Kam Heong Spicy Chicken Rice (RM 22.00)</p>
                     <p><strong>Price per person:</strong> RM 40 - RM 50</p>
                     <p><strong>Deposit:</strong> RM 20</p>
                     <a href="reservation.html?restaurant=1" class="btn">Reserve a table</a>
@@ -54,9 +54,11 @@
             <div class="restaurant-card">
                 <img src="images/jin_xuan.jpg" alt="Steaming bamboo baskets of dim sum at Jin Xuan">
                 <div class="restaurant-card-content">
-                    <h3>Restoran Jin Xuan Hong Kong</h3>
+                    <h2>Restoran Jin Xuan Hong Kong</h2>
+                    <p class="description">A staple for dim sum lovers, Restoran Jin Xuan Hong Kong in Damansara Uptown brings authentic flavors and a lively morning atmosphere straight to your table. Whether you are bringing the whole family or catching up with friends, our freshly steamed baskets and traditional baked goods offer a comforting, mouth-watering experience.</p>
                     <p><strong>Area:</strong> Damansara Uptown</p>
                     <p><strong>Cuisine:</strong> Hong Kong dim sum</p>
+                    <p><strong>Signature Dishes:</strong> Har Gaw (RM 8.00), BBQ Pork Bun (RM 7.50)</p>
                     <p><strong>Price per person:</strong> RM 30 - RM 40</p>
                     <p><strong>Deposit:</strong> RM 15</p>
                     <a href="reservation.html?restaurant=2" class="btn">Reserve a table</a>
@@ -67,9 +69,11 @@
             <div class="restaurant-card">
                 <img src="images/ming_kee.webp" alt="Delicious roasted meats hanging at Ming Kee Cantonese">
                 <div class="restaurant-card-content">
-                    <h3>Ming Kee Cantonese</h3>
+                    <h2>Ming Kee Cantonese</h2>
+                    <p class="description">Famous for its beautifully caramelized and tender roast meats, Ming Kee Cantonese is a must-visit destination for traditional Cantonese cuisine. Perfect for family dinners and business lunches, this establishment prides itself on decades of roasting mastery. Experience the perfect balance of crispy skin and juicy, flavorful meat that has made us a beloved landmark.</p>
                     <p><strong>Area:</strong> Damansara Uptown</p>
                     <p><strong>Cuisine:</strong> Cantonese roast meats</p>
+                    <p><strong>Signature Dishes:</strong> Roast Duck (RM 45.00), Char Siew (RM 20.00)</p>
                     <p><strong>Price per person:</strong> RM 50 - RM 70</p>
                     <p><strong>Deposit:</strong> RM 30</p>
                     <a href="reservation.html?restaurant=3" class="btn">Reserve a table</a>
@@ -80,9 +84,11 @@
             <div class="restaurant-card">
                 <img src="images/super_kitchen.webp" alt="A bowl of Super Kitchen Chilli Pan Mee with poached egg">
                 <div class="restaurant-card-content">
-                    <h3>Super Kitchen Chilli Pan Mee</h3>
+                    <h2>Super Kitchen Chilli Pan Mee</h2>
+                    <p class="description">Craving a spicy kick? Super Kitchen Chilli Pan Mee in Subang Jaya serves up the ultimate comfort food for students and locals alike. Our signature noodles are topped with crispy anchovies, minced pork, a perfectly poached egg, and our famous dry chilli flakes. It is a casual, fast-paced eatery where bold, fiery flavors take center stage.</p>
                     <p><strong>Area:</strong> SS15, Subang Jaya</p>
                     <p><strong>Cuisine:</strong> Chilli pan mee</p>
+                    <p><strong>Signature Dishes:</strong> Chilli Pan Mee (RM 12.00)</p>
                     <p><strong>Price per person:</strong> RM 15 - RM 25</p>
                     <p><strong>Deposit:</strong> None</p>
                     <a href="reservation.html?restaurant=4" class="btn">Reserve a table</a>
@@ -93,9 +99,11 @@
             <div class="restaurant-card">
                 <img src="images/menya_hanabi.webp" alt="Signature Nagoya Mazesoba at Menya Hanabi">
                 <div class="restaurant-card-content">
-                    <h3>Menya Hanabi</h3>
+                    <h2>Menya Hanabi</h2>
+                    <p class="description">Originating from Nagoya, Japan, Menya Hanabi is the undisputed pioneer of Mazesoba (soupless ramen). Located in Damansara Utama, we offer a deeply savory, umami-packed bowl loaded with spicy minced meat, seaweed, and a raw egg yolk. Mix it all together for a rich, thick coating on our chewy noodles. A fantastic spot for exciting noodle dates.</p>
                     <p><strong>Area:</strong> Damansara Utama</p>
                     <p><strong>Cuisine:</strong> Japanese ramen</p>
+                    <p><strong>Signature Dishes:</strong> Nagoya Mazesoba (RM 28.00)</p>
                     <p><strong>Price per person:</strong> RM 35 - RM 45</p>
                     <p><strong>Deposit:</strong> RM 10</p>
                     <a href="reservation.html?restaurant=5" class="btn">Reserve a table</a>
@@ -106,9 +114,11 @@
             <div class="restaurant-card">
                 <img src="images/village_park.webp" alt="Famous Nasi Lemak Ayam Goreng at Village Park">
                 <div class="restaurant-card-content">
-                    <h3>Village Park Restaurant</h3>
+                    <h2>Village Park Restaurant</h2>
+                    <p class="description">Consistently hailed as serving the best Nasi Lemak in town, Village Park Restaurant is an iconic Malaysian institution in Damansara Uptown. Renowned for our fragrant coconut rice and incredibly crispy, spiced fried chicken, we offer a truly authentic local dining experience. It is the perfect, bustling spot to enjoy a quintessential Malaysian meal.</p>
                     <p><strong>Area:</strong> Damansara Uptown</p>
                     <p><strong>Cuisine:</strong> Malaysian (nasi lemak)</p>
+                    <p><strong>Signature Dishes:</strong> Nasi Lemak Ayam Goreng (RM 12.30)</p>
                     <p><strong>Price per person:</strong> RM 15 - RM 30</p>
                     <p><strong>Deposit:</strong> RM 10</p>
                     <a href="reservation.html?restaurant=6" class="btn">Reserve a table</a>

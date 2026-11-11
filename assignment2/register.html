@@ -78,6 +78,29 @@
         <span id="reg-confirm-error" class="error-message"></span>
     </div>
 
+    <!-- Dietary Preferences -->
+    <fieldset class="form-group">
+        <legend>Dietary Preferences (Optional)</legend>
+        <label><input type="checkbox" name="dietary" value="halal"> Halal</label>
+        <label><input type="checkbox" name="dietary" value="vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" name="dietary" value="vegan"> Vegan</label>
+        <label><input type="checkbox" name="dietary" value="none"> No Preferences</label>
+    </fieldset>
+
+    <!-- Country/Region -->
+    <div class="form-group">
+        <label for="reg-country">Country/Region</label>
+        <select id="reg-country" name="country" required>
+            <option value="">-- Please select a country --</option>
+            <option value="MY">Malaysia</option>
+            <option value="SG">Singapore</option>
+            <option value="ID">Indonesia</option>
+            <option value="TH">Thailand</option>
+            <option value="OTHER">Other</option>
+        </select>
+        <span id="reg-country-error" class="error-message"></span>
+    </div>
+
     <button type="submit">Register Account</button>
 </form>
         </section>

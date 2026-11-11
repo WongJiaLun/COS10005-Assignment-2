@@ -62,6 +62,19 @@
         <span id="res-date-error" class="error-message"></span>
     </div>
 
+    <!-- Time Selection -->
+    <div class="form-group">
+        <label for="res-time">Reservation Time</label>
+        <input type="time" id="res-time" name="time">
+        <span id="res-time-error" class="error-message"></span>
+    </div>
+
+    <!-- Special Requests -->
+    <div class="form-group">
+        <label for="res-requests">Special Requests (Optional)</label>
+        <textarea id="res-requests" name="requests" rows="3" placeholder="Allergies, high chair, etc."></textarea>
+    </div>
+
     <div class="form-group">
         <label for="res-people">Number of People</label>
         <input type="number" id="res-people" name="people" min="1" value="1">
@@ -93,6 +106,16 @@
         <label for="res-cc-number" style="margin-top: 10px;">Credit Card Number</label>
         <input type="text" id="res-cc-number" name="cc-number" placeholder="Digits only">
         <span id="res-cc-error" class="error-message"></span>
+    </div>
+
+    <!-- Billing Email with Checkbox -->
+    <div class="form-group">
+        <label for="res-billing-email" style="margin-top: 20px;">Billing Email Address</label>
+        <label style="font-weight: normal; font-size: 0.9em; margin-bottom: 5px; display: block;">
+            <input type="checkbox" id="same-email-check"> Same as email address
+        </label>
+        <input type="text" id="res-billing-email" name="billing-email">
+        <span id="res-billing-email-error" class="error-message"></span>
     </div>
 
     <button type="submit">Confirm Reservation</button>

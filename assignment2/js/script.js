@@ -85,7 +85,7 @@ function showError(fieldId, message) {
     var errorElement = document.getElementById(fieldId + "-error");
     if (errorElement) {
         errorElement.textContent = message;
-        errorElement.style.color = "red";
+        errorElement.style.color = "#B30000";
     }
 }
 
@@ -157,7 +157,6 @@ function initRecommendPage() {
 }
 
 /* 5. Registration page validation ----------------------------------------- */
-/* 5. Registration page validation ----------------------------------------- */
 function initRegisterPage() {
     var form = document.getElementById("register-form");
     if (!form) return;
@@ -223,6 +222,15 @@ function initRegisterPage() {
             clearError("reg-confirm");
         }
 
+        // 7. Country must be selected
+        var country = document.getElementById("reg-country").value;
+        if (country === "") {
+            showError("reg-country", "Please select your country/region.");
+            isValid = false;
+        } else {
+            clearError("reg-country");
+        }
+
         // Block submission until all errors are resolved
         if (!isValid) {
             event.preventDefault(); 
@@ -234,9 +242,34 @@ function initRegisterPage() {
 }
 
 /* 6. Reservation page ------------------------------------------------------ */
+
 function initReservationPage() {
     var form = document.getElementById("reservation-form");
     if (!form) return;
+
+    // --- NEW: Billing Email Auto-fill Logic (Moved outside the submit event) ---
+    var sameEmailCheck = document.getElementById("same-email-check");
+    var mainEmailInput = document.getElementById("res-email");
+    var billingEmailInput = document.getElementById("res-billing-email");
+
+    if (sameEmailCheck && mainEmailInput && billingEmailInput) {
+        sameEmailCheck.addEventListener("change", function() {
+            if (this.checked) {
+                billingEmailInput.value = mainEmailInput.value;
+                billingEmailInput.readOnly = true; 
+            } else {
+                billingEmailInput.value = "";
+                billingEmailInput.readOnly = false; 
+            }
+        });
+
+        mainEmailInput.addEventListener("input", function() {
+            if (sameEmailCheck.checked) {
+                billingEmailInput.value = this.value;
+            }
+        });
+    }
+    // ---------------------------------------------------------------------------
 
     // 1. Dynamic Payment Display Logic
     var paymentRadios = document.querySelectorAll('input[name="payment"]');
@@ -314,7 +347,7 @@ function initReservationPage() {
         } else {
             clearError("res-people");
         }
-
+        
         // Payment Validation
         var paymentSelected = document.querySelector('input[name="payment"]:checked');
         if (!paymentSelected) {
@@ -348,6 +381,58 @@ function initReservationPage() {
     });
 }
 
+/* 7. Bill calculator page ------------------------------------------------- */
+/* 7. Bill calculator page ------------------------------------------------- */
+function initBillPage() {
+    var calculateBtn = document.getElementById("calculate-btn");
+    if (!calculateBtn) return; // Exit if not on the bill page
+
+    calculateBtn.addEventListener("click", function() {
+        // 1. Get input values
+        var restaurantSelect = document.getElementById("calc-restaurant");
+        var numPeopleInput = document.getElementById("calc-people").value;
+        var sstCheckbox = document.getElementById("calc-sst");
+        var serviceCheckbox = document.getElementById("calc-service");
+
+        // 2. Validation
+        var avgPerPax = parseFloat(restaurantSelect.value);
+        var numPeople = parseInt(numPeopleInput, 10);
+
+        if (isNaN(avgPerPax) || avgPerPax <= 0) {
+            alert("Please select a valid restaurant.");
+            return;
+        }
+
+        if (isNaN(numPeople) || numPeople <= 0) {
+            alert("Please enter a valid number of diners (at least 1).");
+            return;
+        }
+
+        // 3. Calculation
+        var subtotal = avgPerPax * numPeople;
+        
+        var sstAmount = 0;
+        if (sstCheckbox && sstCheckbox.checked) {
+            sstAmount = subtotal * parseFloat(sstCheckbox.value); // 6%
+        }
+
+        var serviceAmount = 0;
+        if (serviceCheckbox && serviceCheckbox.checked) {
+            serviceAmount = subtotal * parseFloat(serviceCheckbox.value); // 10%
+        }
+
+        var finalTotal = subtotal + sstAmount + serviceAmount;
+
+        // 4. Update the UI
+        document.getElementById("bill-total").textContent = finalTotal.toFixed(2);
+        
+        var breakdownText = `Subtotal: RM ${subtotal.toFixed(2)}`;
+        if (sstAmount > 0) breakdownText += ` | SST (6%): RM ${sstAmount.toFixed(2)}`;
+        if (serviceAmount > 0) breakdownText += ` | Service Charge (10%): RM ${serviceAmount.toFixed(2)}`;
+        
+        document.getElementById("bill-breakdown").textContent = breakdownText;
+    });
+}
 /* 8. Start-up ------------------------------------------------------------- */
 highlightCurrentPage();
 initRecommendPage();
