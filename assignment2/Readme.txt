@@ -19,7 +19,7 @@ images/           - Directory containing all optimized image assets used across 
 
 GitHub repository
 
-[INSERT YOUR GITHUB REPOSITORY LINK HERE - e.g., https://github.com/yourusername/cos10005-assign2]
+https://github.com/WongJiaLun/COS10005-Assignment-2.git
 
 JavaScript validation logic (plain English)
 
@@ -37,20 +37,23 @@ Known issues or limitations
 
 None known. All forms validate strictly according to the rubric, WAVE accessibility structural alerts (headings, empty select options) have been resolved, and the CSS grid layouts are fully responsive across desktop, tablet, and mobile views.
 
-References (Harvard style)
+References
 
-(Note: You must update the URLs below to the actual websites where you downloaded your images)
 
-Author/Site Name, 2026. Piii Eatery Cafe Interior. [image] Available at: https://www.example.com/piii-eatery [Accessed 11 November 2026].
+Piii, 2026. Piii | Bukit Mertajam | Facebook. [image] Available at: https://www.facebook.com/PiiiBukitMertajam [Accessed 11 November 2026]
 
-Author/Site Name, 2026. Restoran Jin Xuan Hong Kong Dim Sum. [image] Available at: https://www.example.com/jin-xuan [Accessed 11 November 2026].
+tinytanblog. (2022, January 30). Restaurant Jin Xuan Hong Kong @ PJU5, Kota Damansara (锦选香港特级点心). Tiny Tan.[image] Available at: https://tinytanblog.me/2022/01/30/restaurant-jin-xuan-hong-kong-pju5-kota-damansara/
 
-Author/Site Name, 2026. Ming Kee Cantonese Roast Meats. [image] Available at: https://www.example.com/ming-kee [Accessed 11 November 2026].
+Ming Kee Cantonese, 2026. Ming Kee Cantonese. [image] Available at: https://mingkeecantonese.com/ [Accessed 11 November 2026].
 
-Author/Site Name, 2026. Super Kitchen Chilli Pan Mee. [image] Available at: https://www.example.com/super-kitchen [Accessed 11 November 2026].
+Super Kitchen Chilli Pan Mee, 2026. Outlets – Super Kitchen Chilli Pan Mee. [image] Available at: https://chillipanmee.com/outlets/ [Accessed 11 November 2026].
 
-Author/Site Name, 2026. Menya Hanabi Mazesoba. [image] Available at: https://www.example.com/menya-hanabi [Accessed 11 November 2026].
+Menya Hanabi, 2026. Menya Hanabi 麺屋はなび Kota Kemuning | Shah Alam | Facebook. [image] Available at: https://www.facebook.com/MenyaHanabiKotaKemuning [Accessed 11 November 2026].
 
-Author/Site Name, 2026. Village Park Nasi Lemak. [image] Available at: https://www.example.com/village-park [Accessed 11 November 2026].
+foodandfeast. (2017, June 10). Nasi Lemak Village Park - Malaysian food award 2016 & 2017. Foodandfeast.[image] Available at: http://www.foodandfeast.com/2017/06/villageparkrestaurant.html
 
-Author/Site Name, 2026. Nasi Lemak Hero Image. [image] Available at: https://www.example.com/hero-image [Accessed 11 November 2026].
+Khoo, N. (2021, September 26). 15 Cafes and restaurants with outdoor dining areas in the Klang Valley. BURO.[image] Available at: https://www.buro247.my/lifestyle/food-drink/cafes-restaurants-outdoor-klang-valley.html
+
+https://www.w3schools.com/js/default.asp
+
+https://www.w3schools.com/css/default.asp
