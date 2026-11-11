@@ -1,0 +1,368 @@
+/* ==========================================================================
+   COS10005 Assignment 2 - style.css
+   Author: TODO Your Name (TODO Student ID)
+
+   Contents
+   1. Design tokens (colours, spacing, fonts)
+   2. Base / reset
+   3. Layout helpers
+   4. Header and navigation
+   5. Footer
+   6. Restaurant cards
+   7. Forms and error messages
+   8. Buttons
+   9. Responsive: tablet (768px - 1023px)
+   10. Responsive: mobile (767px and below)
+   ========================================================================== */
+
+/* 1. Design tokens ------------------------------------------------------- */
+:root {
+    /* Refined palette with high contrast for accessibility */
+    --colour-text: #2b2b2b;
+    --colour-text-muted: #666666;
+    --colour-background: #ffffff;
+    --colour-primary: #c9302c; /* Appetizing deep red */
+    --colour-primary-hover: #ac2925;
+    --colour-primary-text: #ffffff;
+    --colour-surface: #f8f9fa; /* Light grey for sections/forms */
+    --colour-border: #e2e8f0;
+    --colour-error: #d9534f;
+    
+    /* Spacing and layout elements */
+    --space-xs: 0.25rem;
+    --space-s: 0.5rem;
+    --space-m: 1rem;
+    --space-l: 2rem;
+    --space-xl: 3rem;
+    
+    /* Modern system font stack */
+    --font-body: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --radius: 8px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* 2. Base / reset -------------------------------------------------------- */
+* { /* Fixed the typo from '-' to '*' */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--colour-text);
+    background-color: var(--colour-background);
+}
+
+h1, h2, h3 {
+    color: var(--colour-text);
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 3. Layout helpers ------------------------------------------------------ */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-m);
+    min-height: 70vh; /* Keeps footer at bottom on short pages */
+}
+
+/* 4. Header and navigation ----------------------------------------------- */
+.site-header {
+    background-color: var(--colour-primary);
+    color: var(--colour-primary-text);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-m);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-m);
+}
+
+.site-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+}
+
+.nav-list a {
+    display: block;
+    padding: var(--space-s) var(--space-m);
+    color: var(--colour-primary-text);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-list a.active {
+    background-color: var(--colour-primary-text);
+    color: var(--colour-primary);
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Hero Image Styles --- */
+.hero-container {
+    width: 100%;
+    height: 400px; /* Constrains the height so text stays visible above the fold */
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: var(--space-l);
+    box-shadow: var(--shadow-md);
+}
+
+#hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fit the container without squishing it */
+    object-position: center; /* Keeps the focus on the center of the food */
+}
+
+/* 5. Footer -------------------------------------------------------------- */
+.site-footer {
+    background-color: var(--colour-surface);
+    border-top: 1px solid var(--colour-border);
+    padding: var(--space-l) var(--space-m);
+    text-align: center;
+    color: var(--colour-text-muted);
+    font-size: 0.9rem;
+}
+
+/* 6. Restaurant cards ---------------------------------------------------- */
+#results-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-l);
+    margin-top: var(--space-l);
+}
+
+.restaurant-card {
+    background-color: var(--colour-background);
+    border: 1px solid var(--colour-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: #d1d5db;
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.restaurant-card-content {
+    padding: var(--space-m);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.restaurant-card-content h3 {
+    margin: 0 0 var(--space-xs) 0;
+    font-size: 1.25rem;
+}
+
+.restaurant-card-content p {
+    color: var(--colour-text-muted);
+    margin: 0 0 var(--space-m) 0;
+    flex-grow: 1;
+}
+.restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-l);
+    margin-top: var(--space-l);
+}
+
+/* 7. Forms and error messages -------------------------------------------- */
+form {
+    background-color: var(--colour-surface);
+    padding: var(--space-l);
+    border-radius: var(--radius);
+    border: 1px solid var(--colour-border);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: var(--space-m);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--colour-text);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus,
+select:focus {
+    border-color: var(--colour-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(201, 48, 44, 0.15); /* Accessible focus ring */
+}
+
+fieldset {
+    border: 1px solid var(--colour-border);
+    border-radius: var(--radius);
+    padding: var(--space-m);
+    margin-bottom: var(--space-m);
+    background-color: var(--colour-background);
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 var(--space-xs);
+    color: var(--colour-text);
+}
+
+.error-message {
+    display: block;
+    color: var(--colour-error);
+    font-size: 0.85rem;
+    margin-top: var(--space-xs);
+    font-weight: 500;
+}
+
+/* 8. Buttons ------------------------------------------------------------- */
+button, 
+.btn {
+    display: inline-block;
+    background-color: var(--colour-primary);
+    color: var(--colour-primary-text);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+    width: 100%;
+}
+
+button:hover, 
+button:focus,
+.btn:hover,
+.btn:focus {
+    background-color: var(--colour-primary-hover);
+    transform: translateY(-1px);
+}
+
+/* Card buttons shouldn't span full width unless desired, override here */
+.restaurant-card .btn {
+    margin-top: auto;
+}
+
+/* 9. Responsive: tablet (768px - 1023px) --------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #results-container,
+    .restaurant-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 10. Responsive: mobile (767px and below) ------------------------------- */
+@media (max-width: 767px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .site-name {
+        margin-bottom: var(--space-s);
+    }
+
+    .site-header {
+        position: static; /* This stops the header from sticking on phones */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-list a {
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: var(--space-m);
+    }
+
+    .nav-list a:last-child {
+        border-bottom: none;
+    }
+
+    #results-container,
+    .restaurant-list {
+        grid-template-columns: 1fr; /* Stacks to 1 column on phones */
+    }
+
+    form {
+        padding: var(--space-m);
+    }
+
+    .hero-container {
+        height: 250px; /* Shorter image on mobile screens */
+    }
+}
