@@ -1,6 +1,5 @@
 /* ==========================================================================
    COS10005 Assignment 2 - script.js
-   Author: TODO Your Name (TODO Student ID)
 
    Contents
    1. Restaurant data
