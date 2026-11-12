@@ -398,7 +398,7 @@ function initReservationPage() {
     });
 }
 
-/* 7. Bill calculator page ------------------------------------------------- */
+
 /* 7. Bill calculator page ------------------------------------------------- */
 function initBillPage() {
     var calculateBtn = document.getElementById("calculate-btn");
