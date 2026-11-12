@@ -131,6 +131,7 @@ function highlightCurrentPage() {
 }
 
 /* 4. Recommendation page -------------------------------------------------- */
+/* 4. Recommendation page -------------------------------------------------- */
 function initRecommendPage() {
     var form = document.getElementById("recommend-form");
     if (!form) return;
@@ -160,10 +161,20 @@ function initRecommendPage() {
 
         // Render results
         if (matches.length > 0) {
-            var html = "<h3>We found " + matches.length + " match(es)!</h3><ul>";
+            var html = "<h3>We found " + matches.length + " match(es)!</h3><ul style='list-style: none; padding: 0;'>";
             matches.forEach(function(m) {
-                html += `<li><strong>${m.name}</strong> - ${m.cuisine} 
-                         <br><a href="reservation.html?restaurant=${m.id}" class="btn">Reserve a table</a></li><br>`;
+                // Extract and format the signature dishes
+                var dishesText = m.dishes.map(function(dish) {
+                    return dish.name + " (RM " + dish.price.toFixed(2) + ")";
+                }).join(", ");
+
+                html += `<li style="margin-bottom: 25px; padding: 15px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #fff;">
+                            <strong style="font-size: 1.2em;">${m.name}</strong> - ${m.cuisine} <br>
+                            <p style="margin: 8px 0; color: #555; font-size: 0.95em;">
+                                <strong>Signature Dishes:</strong> ${dishesText}
+                            </p>
+                            <a href="reservation.html?restaurant=${m.id}" class="btn" style="margin-top: 10px; display: inline-block;">Reserve a table</a>
+                         </li>`;
             });
             html += "</ul>";
             container.innerHTML = html;
