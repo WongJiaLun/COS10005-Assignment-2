@@ -18,7 +18,10 @@
 var restaurants = [
     {
         id: 1, name: "PIII Eatery", area: "Damansara Uptown",
-        cuisine: "Western pasta & rice bowls", image: null, imageAlt: null, description: null,
+        cuisine: "Western pasta & rice bowls", 
+        image: "images/piii_eatery.jpg", 
+        imageAlt: "A modern plate of creamy pasta and a savory rice bowl on a wooden table", 
+        description: "A cozy, modern cafe specializing in comforting Western pasta dishes and flavorful fusion rice bowls.",
         priceMin: 40, priceMax: 50, deposit: 20,
         dishes: [
             { name: "Spaghetti Carbonara", price: 25.00 },
@@ -28,7 +31,10 @@ var restaurants = [
     },
     {
         id: 2, name: "Restoran Jin Xuan Hong Kong", area: "Damansara Uptown",
-        cuisine: "Hong Kong dim sum", image: null, imageAlt: null, description: null,
+        cuisine: "Hong Kong dim sum", 
+        image: "images/jin_xuan.jpg", 
+        imageAlt: "Bamboo steamers filled with fresh har gaw and fluffy BBQ pork buns", 
+        description: "A bustling, traditional dim sum spot famous for its piping hot dumplings, fluffy steamed buns, and lively atmosphere.",
         priceMin: 30, priceMax: 40, deposit: 15,
         dishes: [
             { name: "Har Gaw", price: 8.00 },
@@ -38,7 +44,10 @@ var restaurants = [
     },
     {
         id: 3, name: "Ming Kee Cantonese", area: "Damansara Uptown",
-        cuisine: "Cantonese roast meats", image: null, imageAlt: null, description: null,
+        cuisine: "Cantonese roast meats", 
+        image: "images/ming_kee.jpg", 
+        imageAlt: "Shiny roast duck and caramelized char siew hanging in a glass display", 
+        description: "Authentic Cantonese cuisine renowned for its beautifully caramelized char siew, succulent roast duck, and premium dining experience.",
         priceMin: 50, priceMax: 70, deposit: 30,
         dishes: [
             { name: "Roast Duck", price: 45.00 },
@@ -48,7 +57,10 @@ var restaurants = [
     },
     {
         id: 4, name: "Super Kitchen Chilli Pan Mee", area: "SS15, Subang Jaya",
-        cuisine: "Chilli pan mee", image: null, imageAlt: null, description: null,
+        cuisine: "Chilli pan mee", 
+        image: "images/chilli_pan_mee.jpg", 
+        imageAlt: "A bowl of dry pan mee topped with minced meat, crispy anchovies, a poached egg, and dry chilli", 
+        description: "Famous for its fiery dry chilli paste, springy noodles, and perfectly poached eggs, this casual eatery is a staple for spice lovers.",
         priceMin: 15, priceMax: 25, deposit: 0,
         dishes: [
             { name: "Chilli Pan Mee", price: 12.00 }
@@ -57,7 +69,10 @@ var restaurants = [
     },
     {
         id: 5, name: "Menya Hanabi", area: "Damansara Utama",
-        cuisine: "Japanese ramen", image: null, imageAlt: null, description: null,
+        cuisine: "Japanese ramen", 
+        image: "images/menya_hanabi.jpg", 
+        imageAlt: "A bowl of Nagoya Mazesoba topped with minced meat, scallions, seaweed, and a raw egg yolk", 
+        description: "The pioneer of Nagoya Mazesoba (soupless ramen), offering rich, umami-packed bowls meant to be mixed with a dash of vinegar.",
         priceMin: 35, priceMax: 45, deposit: 10,
         dishes: [
             { name: "Nagoya Mazesoba", price: 28.00 }
@@ -66,7 +81,10 @@ var restaurants = [
     },
     {
         id: 6, name: "Village Park Restaurant", area: "Damansara Uptown",
-        cuisine: "Malaysian (nasi lemak)", image: null, imageAlt: null, description: null,
+        cuisine: "Malaysian (nasi lemak)", 
+        image: "images/village_park.jpg", 
+        imageAlt: "A plate of Nasi Lemak with fragrant coconut rice, sambal, and a large crispy fried chicken leg", 
+        description: "An award-winning local legend serving arguably the best Nasi Lemak Ayam Goreng in the Klang Valley.",
         priceMin: 15, priceMax: 30, deposit: 10,
         dishes: [
             { name: "Nasi Lemak Ayam Goreng", price: 12.30 }
